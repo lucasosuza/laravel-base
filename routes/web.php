@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    
+    $contents = \App\Content::all();
+
+    return view('home')
+        ->with('contents', $contents);
 });
+
